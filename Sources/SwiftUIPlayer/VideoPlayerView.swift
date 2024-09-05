@@ -78,6 +78,8 @@ public struct VideoPlayerView: View {
                 
             }
         }
+        .edgesIgnoringSafeArea(.all)
+        
     }
     private func startTimer() {
         timer?.invalidate()
