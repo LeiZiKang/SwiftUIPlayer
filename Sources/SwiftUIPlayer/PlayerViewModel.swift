@@ -1,6 +1,6 @@
 //
 //  File.swift
-//  
+//
 //
 //  Created by Айтолкун Анарбекова on 29.11.2023.
 //
@@ -14,11 +14,9 @@ public class PlayerViewModel: ObservableObject {
     @Published var player = AVPlayer()
     public var timecodes: [Timecode]
     
-    public init(url: String, timecodes: [Timecode]) {
+    public init(url: URL, timecodes: [Timecode]) {
         self.timecodes = timecodes
-        if let videoURL = URL(string: url) {
-            player = AVPlayer(url: videoURL)
-        }
+        player = AVPlayer(url: url)
     }
     
 }
