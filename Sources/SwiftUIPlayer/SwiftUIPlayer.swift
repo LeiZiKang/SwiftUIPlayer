@@ -7,12 +7,13 @@ import SwiftUI
 public struct SwiftUIPlayer: View {
     
     @ObservedObject var viewModel: PlayerViewModel
-    
-    public init(url: String, timecodes: [Timecode]) {
+    @State var showTimeCodeList: Bool
+    public init(url: String, timecodes: [Timecode], showTimeCodeList: Bool) {
         self.viewModel = PlayerViewModel(url: url, timecodes: timecodes)
+        self.showTimeCodeList = showTimeCodeList
     }
     
-    @State var showTimeCodeList = true
+  
     
     public var body: some View {
         VideoPlayerView(player: viewModel.player, timecodes: viewModel.timecodes)
