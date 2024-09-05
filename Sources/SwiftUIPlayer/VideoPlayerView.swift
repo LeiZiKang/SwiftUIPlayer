@@ -66,6 +66,7 @@ public struct VideoPlayerView: View {
                         controlButtons
                     }
                 }
+                .edgesIgnoringSafeArea(.all)
                 .onTapGesture {
                     withAnimation {
                         showControls.toggle()
@@ -78,7 +79,6 @@ public struct VideoPlayerView: View {
                 
             }
         }
-        .edgesIgnoringSafeArea(.all)
         
     }
     private func startTimer() {
